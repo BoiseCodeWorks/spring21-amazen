@@ -45,9 +45,11 @@ namespace AmaZen
             services.AddScoped<AccountsRepository>();
             services.AddTransient<ProductsRepository>();
             services.AddTransient<WarehousesRepository>();
+            services.AddTransient<WarehouseProductsRepository>();
 
             // BUSINESS RULES
             services.AddTransient<ProductsService>();
+            services.AddTransient<WarehouseProductsService>();
             services.AddTransient<WarehousesService>();
         }
 

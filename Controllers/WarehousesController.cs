@@ -29,5 +29,21 @@ namespace AmaZen.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        [HttpGet("{id}/products")]
+        public ActionResult<List<WarehouseProductViewModel>> GetWarehouseProducts(int id)
+        {
+            try
+            {
+                List<WarehouseProductViewModel> products = _warehousesService.GetProducts(id);
+                return Ok(products);
+            }
+            catch (System.Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+
     }
 }
